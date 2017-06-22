@@ -1,0 +1,82 @@
+{
+	"variables": [],
+	"info": {
+		"name": "rest",
+		"_postman_id": "2a1ea371-20bd-0de4-2564-e163fcd134df",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get http://33.33.33.33/article",
+			"request": {
+				"url": "http://33.33.33.33/article",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update http://33.33.33.33/article/1",
+			"request": {
+				"url": "http://33.33.33.33/article/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n \t\n    \"title\": \"update\",\n    \"content\": \"updated\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "del http://33.33.33.33/article/2",
+			"request": {
+				"url": "http://33.33.33.33/article/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add http://33.33.33.33/article",
+			"request": {
+				"url": "http://33.33.33.33/article",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"title\": \"sdfsdfsd\",\n    \"content\": \"fsdfsdfsdf\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
