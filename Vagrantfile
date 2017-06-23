@@ -23,6 +23,8 @@ mkdir -p /usr/local/bin
 
 #Install elasticsearch
 url -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.2.tar.gz
+tar -xvf elasticsearch-5.4.2.tar.gz
+rm elasticsearch-5.4.2.tar.gz
 
 #Install symfony
 curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
