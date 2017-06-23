@@ -17,23 +17,29 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password password roo
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
 apt-get update
-apt-get install -y vim curl apache2 mysql-server php php-mysql php-cli php-curl php-xml
+apt-get install -y vim curl apache2 mysql-server php php-mysql php-cli php-curl php-xml openjdk-8-jdk
 
 mkdir -p /usr/local/bin
 
+#Install elasticsearch
+url -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.2.tar.gz
+
+#Install symfony
 curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 chmod a+x /usr/local/bin/symfony
 
+#Install composer
 curl -LsS https://getcomposer.org/download/1.4.2/composer.phar -o /usr/local/bin/composer
 chmod a+x /usr/local/bin/composer
 
-wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-en.php adminer.php
+#Install adminer.php
+wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-en.php -O adminer.php
 
 cat > /etc/apache2/sites-available/onpage.org.conf<<EOF
   <VirtualHost *:80>
     ServerName domain.tld
     ServerAlias www.domain.tld
-    Alias /adminer.php /adminer.php
+    Alias /adminer.php /var/www/project/adminer.php
     DocumentRoot /var/www/project/web
     <Directory /var/www/project/web>
         AllowOverride All
